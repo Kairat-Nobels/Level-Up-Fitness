@@ -1,4 +1,4 @@
-import styles from './HomeCards.module.css'
+import styles from './homeCards.module.css'
 import {
     FaDumbbell,
     FaHeartbeat,
