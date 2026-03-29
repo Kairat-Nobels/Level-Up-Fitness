@@ -1,0 +1,225 @@
+.navbar {
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    background: #0b0b0b;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+/* LOGO */
+
+.navbar .logo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo .logoImg {
+    width: 40px;
+    height: 40px;
+    background: #00ff88;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 800;
+    color: #000;
+}
+
+.navbar h1 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.navbar h1 span {
+    color: #00ff88;
+}
+
+/* NAV LINKS */
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.navbar ul li a:hover {
+    color: #00ff88;
+}
+
+.navbar ul .active {
+    color: #00ff88;
+}
+
+/* RIGHT SIDE */
+
+.info {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+/* ADMIN BUTTON */
+
+.adminBtn {
+    border-radius: 8px;
+    color: #000;
+    padding: 14px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #00ff88;
+    transition: .3s;
+    border: none;
+}
+
+.adminBtn:hover {
+    transform: scale(1.05);
+    background: #00cc6a;
+}
+
+/* BURGER */
+
+.burger {
+    display: none;
+}
+
+@media (max-width: 885px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        z-index: 111;
+    }
+
+    .adminBtn {
+        display: none;
+    }
+
+    .burgerBtn {
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .burgerBtn p {
+        width: 40px;
+        height: 4px;
+        background: #00ff88;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .burgerBtn p::before,
+    .burgerBtn p::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background: #00ff88;
+        border-radius: 5px;
+        left: 0;
+    }
+
+    .burgerBtn p::before {
+        top: -10px;
+    }
+
+    .burgerBtn p::after {
+        top: 10px;
+    }
+
+    .burgerBtn .close {
+        background: transparent;
+    }
+
+    .burgerBtn .close::before {
+        transform: rotate(45deg);
+        top: 0;
+        background: #fff;
+    }
+
+    .burgerBtn .close::after {
+        transform: rotate(-45deg);
+        top: 0;
+        background: #fff;
+    }
+
+    /* MOBILE MENU */
+
+    .burgerContent {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        background: #000;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        animation: slideIn .3s ease;
+    }
+
+    .burgerContent ul {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .burgerContent ul li a {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .burgerContent .adminBtn {
+        display: block;
+        background: #00ff88;
+        color: #000;
+    }
+
+    .tel a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .workTime {
+        color: #aaa;
+        font-size: 14px;
+        margin-top: auto;
+    }
+}
+
+/* ANIMATION */
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
